@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../App.css";
-import { getUsers } from "../store/action/userAction";
+import { getSpacexData } from "../store/action/spacexAction";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getUsers());
+    dispatch(getSpacexData());
   }, [dispatch]);
   const data: any = useSelector((state) => console.log(state));
 

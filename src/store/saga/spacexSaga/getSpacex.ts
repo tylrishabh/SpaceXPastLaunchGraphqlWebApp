@@ -1,15 +1,15 @@
 import { delay, put } from "redux-saga/effects";
-import { GET_INFO_ABOUT_SPACEX } from "../../../graphql/queries/getUserQueries";
+import { GET_INFO_ABOUT_SPACEX } from "../../../graphql/queries/getSpacexQueries";
 import { mutationOrQueryProvider } from "../../../graphql/index";
-import { setUsers } from "../../action/userAction";
+import { setSpacexData } from "../../action/spacexAction";
 
-export function* handleGetUser(): any {
+export function* handleGetSpacex(): any {
   yield delay(1000);
 
   const res = yield mutationOrQueryProvider(GET_INFO_ABOUT_SPACEX, {
     limit: 10,
   });
-  yield put(setUsers(res));
+  yield put(setSpacexData(res));
   try {
   } catch (error) {
     console.log(error);
